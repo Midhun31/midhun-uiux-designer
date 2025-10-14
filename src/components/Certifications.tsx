@@ -4,25 +4,25 @@ const certifications = [
   {
     title: "Advanced UI/UX Design",
     organization: "Design Institute",
-    year: "2023",
+    year: "2025",
     type: "Certification"
   },
   {
     title: "3D Modeling & Animation Workshop",
     organization: "Blender Foundation",
-    year: "2023",
+    year: "2025",
     type: "Workshop"
   },
   {
     title: "Machine Learning Fundamentals",
     organization: "TensorFlow Academy",
-    year: "2022",
+    year: "2024",
     type: "Certification"
   },
   {
     title: "Creative Design Masterclass",
     organization: "Adobe Education",
-    year: "2022",
+    year: "2024",
     type: "Workshop"
   },
 ];

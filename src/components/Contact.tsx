@@ -95,7 +95,7 @@ const Contact = () => {
               <h3 className="text-2xl font-semibold font-poppins mb-6">Get in Touch</h3>
               <div className="space-y-4">
                 <a 
-                  href="mailto:midhun@example.com"
+                  href="mailto:midhunkrishna0509@gmail.com"
                   className="flex items-center gap-4 p-4 rounded-xl hover:bg-secondary/50 transition-colors group"
                 >
                   <div className="p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
@@ -103,7 +103,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">Email</p>
-                    <p className="font-medium">midhun@example.com</p>
+                    <p className="font-medium">midhunkrishna0509@gmail.com</p>
                   </div>
                 </a>
 
@@ -140,11 +140,11 @@ const Contact = () => {
             </div>
 
             <div className="glass-card p-8 rounded-2xl shadow-elegant">
-              <h3 className="text-xl font-semibold font-poppins mb-4">Availability</h3>
+              <h3 className="text-xl font-semibold font-poppins mb-4">Open to Opportunities</h3>
               <p className="text-muted-foreground leading-relaxed">
-                I'm currently available for freelance projects and collaborations. 
-                Whether you need UI/UX design, 3D visualization, or creative consulting, 
-                I'd love to hear about your project.
+                I'm actively seeking full-time opportunities in UI/UX design and graphic design roles. 
+                Passionate about creating user-centered designs and contributing to innovative teams. 
+                Let's discuss how I can add value to your organization.
               </p>
             </div>
           </div>
