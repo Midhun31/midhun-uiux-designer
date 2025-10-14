@@ -1,79 +1,96 @@
-import { ArrowDown } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import heroBg from "@/assets/hero-bg.jpg";
+import { ArrowDown, Mail } from "lucide-react";
+import { Button } from "./ui/button";
 
 const Hero = () => {
-  const scrollToAbout = () => {
-    document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div 
-        className="absolute inset-0 z-0"
-        style={{
-          backgroundImage: `url(${heroBg})`,
-          backgroundSize: 'cover',
-          backgroundPosition: 'center',
-        }}
-      >
-        <div className="absolute inset-0 bg-gradient-to-br from-background/95 via-background/90 to-background/95" />
-      </div>
-
-      {/* Floating Elements */}
-      <div className="absolute inset-0 z-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-float" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '2s' }} />
-        <div className="absolute top-1/2 left-1/2 w-80 h-80 bg-secondary/10 rounded-full blur-3xl animate-float" style={{ animationDelay: '4s' }} />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-black">
+      {/* Animated Background */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-gradient-to-br from-red-900/20 via-black to-black"></div>
+        <div className="absolute top-0 left-0 w-full h-full">
+          <div className="absolute top-20 left-20 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-parallax"></div>
+          <div className="absolute bottom-20 right-20 w-96 h-96 bg-red-600/10 rounded-full blur-3xl animate-parallax" style={{ animationDelay: '1s' }}></div>
+        </div>
+        <div className="absolute inset-0 bg-[url('/grid.svg')] opacity-5"></div>
       </div>
 
       {/* Content */}
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-up">
-          <div className="space-y-4">
-            <p className="text-primary font-medium tracking-wider uppercase text-sm md:text-base">
-              UI/UX & Graphic Designer
-            </p>
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold font-poppins">
-              Midhun <span className="gradient-text">K</span>
-            </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground font-light max-w-2xl mx-auto leading-relaxed">
-              Designing Experiences that Speak Through Pixels
-            </p>
-          </div>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-6">
-            <Button 
-              size="lg" 
-              className="group bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg rounded-full shadow-elegant hover:glow-soft transition-all duration-300"
-              onClick={scrollToAbout}
-            >
-              Explore My Work
-              <ArrowDown className="ml-2 h-5 w-5 group-hover:translate-y-1 transition-transform" />
-            </Button>
-            <Button 
-              size="lg" 
-              variant="outline"
-              className="glass-card hover:bg-card/80 px-8 py-6 text-lg rounded-full border-2 transition-all duration-300"
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
-            >
-              Get in Touch
-            </Button>
-          </div>
-
-          <div className="pt-12 flex justify-center gap-6 text-sm text-muted-foreground">
-            <div className="flex items-center gap-2">
-              <div className="w-2 h-2 bg-primary rounded-full animate-glow-pulse" />
-              <span>Based in Trichy, Tamil Nadu</span>
+      <div className="container mx-auto px-6 z-10 relative">
+        <div className="max-w-6xl mx-auto text-center space-y-8">
+          {/* Top Label */}
+          <div className="animate-fade-up">
+            <div className="inline-block px-6 py-2 border border-primary/30 rounded-full bg-primary/5 backdrop-blur-sm">
+              <p className="text-primary font-montserrat text-sm tracking-widest">PORTFOLIO 2025</p>
             </div>
+          </div>
+
+          {/* Main Headline */}
+          <div className="space-y-4 animate-fade-up" style={{ animationDelay: '0.2s' }}>
+            <h1 className="text-6xl md:text-8xl lg:text-9xl font-black font-poppins leading-none tracking-tighter">
+              WELCOME TO
+            </h1>
+            <h1 className="text-6xl md:text-8xl lg:text-9xl font-black font-poppins leading-none tracking-tighter gradient-text text-shadow-red">
+              MY PORTFOLIO
+            </h1>
+          </div>
+
+          {/* Subheading */}
+          <div className="animate-fade-up" style={{ animationDelay: '0.4s' }}>
+            <p className="text-2xl md:text-4xl font-montserrat font-light tracking-wide text-gray-300">
+              WHERE IDEAS MEET <span className="text-primary font-semibold">PIXELS</span>
+            </p>
+          </div>
+
+          {/* Subtitle */}
+          <div className="animate-fade-up space-y-3" style={{ animationDelay: '0.6s' }}>
+            <p className="text-xl md:text-2xl font-inter text-muted-foreground">
+              Graphic Design | UI/UX Design
+            </p>
+            <p className="text-2xl md:text-3xl font-arabic text-primary/80" style={{ fontFamily: 'serif' }}>
+              ملف أعمالي
+            </p>
+          </div>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-up" style={{ animationDelay: '0.8s' }}>
+            <a href="#contact">
+              <Button 
+                size="lg" 
+                className="bg-primary hover:bg-primary/90 text-white font-montserrat text-lg px-8 py-6 rounded-full hover-glow-red group"
+              >
+                Let's Work Together
+                <ArrowDown className="ml-2 group-hover:translate-y-1 transition-transform" />
+              </Button>
+            </a>
+            <a href="mailto:midhunkrishna0509@gmail.com">
+              <Button 
+                size="lg" 
+                variant="outline"
+                className="border-2 border-primary text-primary hover:bg-primary hover:text-white font-montserrat text-lg px-8 py-6 rounded-full transition-all duration-300"
+              >
+                <Mail className="mr-2" />
+                Get in Touch
+              </Button>
+            </a>
+          </div>
+
+          {/* Email */}
+          <div className="animate-fade-up" style={{ animationDelay: '1s' }}>
+            <a 
+              href="mailto:midhunkrishna0509@gmail.com"
+              className="text-muted-foreground hover:text-primary transition-colors font-inter text-sm"
+            >
+              midhunkrishna0509@gmail.com
+            </a>
           </div>
         </div>
       </div>
 
       {/* Scroll Indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <ArrowDown className="h-6 w-6 text-muted-foreground" />
+        <div className="w-6 h-10 border-2 border-primary rounded-full flex justify-center">
+          <div className="w-1 h-3 bg-primary rounded-full mt-2 animate-pulse"></div>
+        </div>
       </div>
     </section>
   );
