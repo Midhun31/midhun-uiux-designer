@@ -98,8 +98,8 @@ const About = () => {
                 <p className="text-white font-semibold font-montserrat">Trichy, TN</p>
               </div>
               <div className="glass-card p-6 rounded-xl text-center border-l-4 border-primary">
-                <p className="text-gray-400 text-sm mb-1">Experience</p>
-                <p className="text-white font-semibold font-montserrat">2+ Years</p>
+                <p className="text-gray-400 text-sm mb-1">Status</p>
+                <p className="text-white font-semibold font-montserrat">Fresher</p>
               </div>
             </div>
           </div>
