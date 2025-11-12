@@ -1,83 +1,276 @@
-import { ExternalLink } from "lucide-react";
+import { useState } from "react";
+import { X } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
-import project1 from "@/assets/project-1.jpg";
-import project2 from "@/assets/project-2.jpg";
-import project3 from "@/assets/project-3.jpg";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-const projects = [
-  {
-    title: "Portfolio & Prototypes",
-    description: "Interactive prototypes and design systems crafted in Figma, enhanced with 3D elements from Blender for immersive user experiences.",
-    image: project1,
-    tags: ["Figma", "Blender", "UI/UX"],
-  },
-  {
-    title: "2D to 3D Visual Converter",
-    description: "Innovative tool that transforms flat 2D designs into dynamic 3D models, bridging the gap between traditional and dimensional design.",
-    image: project2,
-    tags: ["Blender", "Python", "3D Modeling"],
-  },
-  {
-    title: "Product Review Generator",
-    description: "AI-powered platform leveraging machine learning to generate insightful product reviews with data visualization and sentiment analysis.",
-    image: project3,
-    tags: ["TensorFlow", "Python", "Data Viz"],
-  },
-];
+// 3D Projects
+import city3d from "@/assets/3d-city.png";
+import donut3d from "@/assets/3d-donut.jpg";
+import drone3d from "@/assets/3d-drone.jpg";
+
+// UI/UX Projects
+import appleFlow from "@/assets/ui-apple-flow.png";
+import airpods from "@/assets/ui-airpods.png";
+import fruitJuiceDesktop from "@/assets/ui-fruit-juice-desktop.png";
+import fruitJuice from "@/assets/ui-fruit-juice.png";
+
+// Graphic Design
+import workshopPoster from "@/assets/poster-workshop.jpg";
+import perfumePoster from "@/assets/poster-perfume.jpg";
+import cricketPoster from "@/assets/poster-cricket.jpg";
+
+const projectCategories = {
+  "3d": [
+    {
+      title: "Urban Environment Scene",
+      description: "Detailed 3D cityscape with realistic lighting and atmospheric effects",
+      image: city3d,
+      tags: ["Blender", "3D Modeling", "Environment Design"],
+    },
+    {
+      title: "Photorealistic Donuts",
+      description: "High-quality 3D product visualization with advanced materials and texturing",
+      image: donut3d,
+      tags: ["Blender", "Product Viz", "Materials"],
+    },
+    {
+      title: "Drone Warehouse Visualization",
+      description: "Complex scene showcasing industrial automation and warehouse systems",
+      image: drone3d,
+      tags: ["Blender", "Industrial Design", "Rendering"],
+    },
+  ],
+  "uiux": [
+    {
+      title: "Apple Product Flow",
+      description: "User journey mapping and product ecosystem visualization",
+      image: appleFlow,
+      tags: ["Figma", "User Flow", "Product Design"],
+    },
+    {
+      title: "AirPods Max Landing Page",
+      description: "Premium product showcase with minimalist design approach",
+      image: airpods,
+      tags: ["Figma", "Web Design", "UI Design"],
+    },
+    {
+      title: "Fruit Juice Desktop Concepts",
+      description: "Multi-screen desktop application design system",
+      image: fruitJuiceDesktop,
+      tags: ["Figma", "Desktop UI", "Design System"],
+    },
+    {
+      title: "Fruit Juice Website",
+      description: "Vibrant brand-focused web design with custom illustrations",
+      image: fruitJuice,
+      tags: ["Figma", "Web Design", "Branding"],
+    },
+  ],
+  "graphic": [
+    {
+      title: "Workshop Innovation Poster",
+      description: "Event poster design for technology and innovation workshop",
+      image: workshopPoster,
+      tags: ["Affinity", "Poster Design", "Typography"],
+    },
+    {
+      title: "Arumide Perfume Ad",
+      description: "Luxury product advertisement with elegant visual composition",
+      image: perfumePoster,
+      tags: ["Canva", "Product Ad", "Luxury Branding"],
+    },
+    {
+      title: "Cricket Typography Poster",
+      description: "Bold typographic design celebrating cricket legends",
+      image: cricketPoster,
+      tags: ["Adobe", "Typography", "Sports Design"],
+    },
+  ],
+};
 
 const Projects = () => {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
   return (
-    <section id="projects" className="py-24 px-6 bg-secondary/30">
-      <div className="container mx-auto max-w-6xl">
+    <section id="projects" className="py-24 px-6 bg-gradient-to-b from-background via-secondary/10 to-background relative overflow-hidden">
+      {/* Background effects */}
+      <div className="absolute inset-0 bg-gradient-radial from-primary/5 via-transparent to-transparent opacity-50" />
+      
+      <div className="container mx-auto max-w-7xl relative z-10">
         <div className="text-center mb-16 animate-fade-up">
           <h2 className="text-4xl md:text-5xl font-bold font-poppins mb-4">
-            Featured <span className="gradient-text">Projects</span>
+            My <span className="gradient-text">Projects</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            A curated selection of my recent work, showcasing design thinking and technical execution
+            Explore my work across 3D modeling, UI/UX design, and graphic design
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {projects.map((project, index) => (
-            <Card 
-              key={project.title} 
-              className="group overflow-hidden border-2 hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 hover:glow-soft bg-card animate-fade-up"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <div className="relative overflow-hidden aspect-square">
-                <img 
-                  src={project.image} 
-                  alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-6">
-                  <ExternalLink className="h-8 w-8 text-white" />
-                </div>
-              </div>
-              
-              <CardContent className="p-6 space-y-4">
-                <h3 className="text-xl font-semibold font-poppins group-hover:text-primary transition-colors">
-                  {project.title}
-                </h3>
-                <p className="text-muted-foreground text-sm leading-relaxed">
-                  {project.description}
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
-                    <span 
-                      key={tag}
-                      className="px-3 py-1 bg-primary/10 text-primary text-xs font-medium rounded-full"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+        <Tabs defaultValue="3d" className="w-full">
+          <TabsList className="grid w-full max-w-md mx-auto grid-cols-3 mb-12 bg-card/50 backdrop-blur-sm border border-primary/20">
+            <TabsTrigger value="3d" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+              3D Projects
+            </TabsTrigger>
+            <TabsTrigger value="uiux" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+              UI/UX
+            </TabsTrigger>
+            <TabsTrigger value="graphic" className="data-[state=active]:bg-primary data-[state=active]:text-primary-foreground">
+              Graphic Design
+            </TabsTrigger>
+          </TabsList>
+
+          <TabsContent value="3d" className="mt-0">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {projectCategories["3d"].map((project, index) => (
+                <Card 
+                  key={project.title}
+                  className="group overflow-hidden border-2 border-border hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 hover:glow-red bg-card/80 backdrop-blur-sm cursor-pointer animate-fade-up"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                  onClick={() => setSelectedImage(project.image)}
+                >
+                  <div className="relative overflow-hidden aspect-video">
+                    <img 
+                      src={project.image} 
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <span className="text-white font-semibold text-lg">Click to View</span>
+                    </div>
+                  </div>
+                  
+                  <CardContent className="p-6 space-y-4">
+                    <h3 className="text-xl font-semibold font-poppins group-hover:text-primary transition-colors">
+                      {project.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">
+                      {project.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {project.tags.map((tag) => (
+                        <span 
+                          key={tag}
+                          className="px-3 py-1 bg-primary/10 text-primary text-xs font-medium rounded-full border border-primary/20"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </TabsContent>
+
+          <TabsContent value="uiux" className="mt-0">
+            <div className="grid md:grid-cols-2 gap-8">
+              {projectCategories.uiux.map((project, index) => (
+                <Card 
+                  key={project.title}
+                  className="group overflow-hidden border-2 border-border hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 hover:glow-red bg-card/80 backdrop-blur-sm cursor-pointer animate-fade-up"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                  onClick={() => setSelectedImage(project.image)}
+                >
+                  <div className="relative overflow-hidden aspect-video">
+                    <img 
+                      src={project.image} 
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <span className="text-white font-semibold text-lg">Click to View</span>
+                    </div>
+                  </div>
+                  
+                  <CardContent className="p-6 space-y-4">
+                    <h3 className="text-xl font-semibold font-poppins group-hover:text-primary transition-colors">
+                      {project.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">
+                      {project.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {project.tags.map((tag) => (
+                        <span 
+                          key={tag}
+                          className="px-3 py-1 bg-primary/10 text-primary text-xs font-medium rounded-full border border-primary/20"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </TabsContent>
+
+          <TabsContent value="graphic" className="mt-0">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {projectCategories.graphic.map((project, index) => (
+                <Card 
+                  key={project.title}
+                  className="group overflow-hidden border-2 border-border hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 hover:glow-red bg-card/80 backdrop-blur-sm cursor-pointer animate-fade-up"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                  onClick={() => setSelectedImage(project.image)}
+                >
+                  <div className="relative overflow-hidden aspect-[3/4]">
+                    <img 
+                      src={project.image} 
+                      alt={project.title}
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <span className="text-white font-semibold text-lg">Click to View</span>
+                    </div>
+                  </div>
+                  
+                  <CardContent className="p-6 space-y-4">
+                    <h3 className="text-xl font-semibold font-poppins group-hover:text-primary transition-colors">
+                      {project.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm leading-relaxed">
+                      {project.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {project.tags.map((tag) => (
+                        <span 
+                          key={tag}
+                          className="px-3 py-1 bg-primary/10 text-primary text-xs font-medium rounded-full border border-primary/20"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </TabsContent>
+        </Tabs>
       </div>
+
+      {/* Image Modal */}
+      <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
+        <DialogContent className="max-w-[95vw] max-h-[95vh] p-0 bg-black/95 border-primary/20">
+          <button
+            onClick={() => setSelectedImage(null)}
+            className="absolute top-4 right-4 z-50 p-2 rounded-full bg-primary/20 hover:bg-primary/30 transition-colors"
+          >
+            <X className="h-6 w-6 text-white" />
+          </button>
+          {selectedImage && (
+            <div className="flex items-center justify-center w-full h-full p-4">
+              <img 
+                src={selectedImage} 
+                alt="Project preview"
+                className="max-w-full max-h-[90vh] object-contain animate-scale-in"
+              />
+            </div>
+          )}
+        </DialogContent>
+      </Dialog>
     </section>
   );
 };
