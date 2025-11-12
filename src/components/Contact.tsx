@@ -2,6 +2,7 @@ import { Mail, Linkedin, Github, Send } from "lucide-react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
+import profileImage from "@/assets/profile-midhun.jpg";
 
 const Contact = () => {
   return (
@@ -27,7 +28,18 @@ const Contact = () => {
           {/* Contact Info */}
           <div className="space-y-8 animate-fade-up" style={{ animationDelay: '0.2s' }}>
             <div className="glass-card-red p-8 rounded-3xl">
-              <h3 className="text-2xl font-bold font-poppins text-white mb-6">
+              {/* Profile Image */}
+              <div className="flex justify-center mb-6">
+                <div className="relative w-40 h-40 rounded-full overflow-hidden border-4 border-primary/30 shadow-elegant">
+                  <img 
+                    src={profileImage} 
+                    alt="Midhun Krishna" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+              
+              <h3 className="text-2xl font-bold font-poppins text-white mb-6 text-center">
                 Open to Opportunities
               </h3>
               <p className="text-gray-300 font-inter leading-relaxed mb-6">
