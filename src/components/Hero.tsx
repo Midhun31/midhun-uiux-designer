@@ -17,13 +17,6 @@ const Hero = () => {
       {/* Content */}
       <div className="container mx-auto px-6 z-10 relative">
         <div className="max-w-6xl mx-auto text-center space-y-8">
-          {/* Top Label */}
-          <div className="animate-fade-up">
-            <div className="inline-block px-6 py-2 border border-primary/30 rounded-full bg-primary/5 backdrop-blur-sm">
-              <p className="text-primary font-montserrat text-sm tracking-widest">PORTFOLIO 2025</p>
-            </div>
-          </div>
-
           {/* Main Headline */}
           <div className="space-y-4 animate-fade-up" style={{ animationDelay: '0.2s' }}>
             <h1 className="text-6xl md:text-8xl lg:text-9xl font-black font-poppins leading-none tracking-tighter">
@@ -42,12 +35,9 @@ const Hero = () => {
           </div>
 
           {/* Subtitle */}
-          <div className="animate-fade-up space-y-3" style={{ animationDelay: '0.6s' }}>
+          <div className="animate-fade-up" style={{ animationDelay: '0.6s' }}>
             <p className="text-xl md:text-2xl font-inter text-muted-foreground">
               Graphic Design | UI/UX Design
-            </p>
-            <p className="text-2xl md:text-3xl font-arabic text-primary/80" style={{ fontFamily: 'serif' }}>
-              ملف أعمالي
             </p>
           </div>
 
@@ -86,12 +76,6 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-primary rounded-full flex justify-center">
-          <div className="w-1 h-3 bg-primary rounded-full mt-2 animate-pulse"></div>
-        </div>
-      </div>
     </section>
   );
 };
