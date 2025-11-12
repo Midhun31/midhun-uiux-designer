@@ -35,11 +35,11 @@ const Experience = () => {
       <div className="container mx-auto max-w-6xl relative z-10">
         <div className="text-center mb-16 animate-fade-up">
           <h2 className="text-5xl md:text-7xl font-black font-poppins mb-4">
-            Projects & <span className="gradient-text">Experience</span>
+            Academic <span className="gradient-text">Projects</span>
           </h2>
           <div className="w-24 h-1 bg-primary mx-auto mb-6"></div>
           <p className="text-gray-400 text-lg max-w-2xl mx-auto font-inter">
-            Transforming creative visions into impactful digital solutions
+            Hands-on learning experiences showcasing design and technical skills
           </p>
         </div>
 
