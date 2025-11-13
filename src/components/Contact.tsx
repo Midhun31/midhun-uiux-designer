@@ -29,11 +29,11 @@ const Contact = () => {
           <div className="space-y-8 animate-fade-up" style={{ animationDelay: '0.2s' }}>
             {/* Profile Photo */}
             <div className="glass-card p-8 rounded-3xl flex justify-center">
-              <div className="relative w-64 h-64 rounded-full overflow-hidden border-4 border-primary/30 shadow-2xl hover-glow-red">
+              <div className="relative w-64 h-80 rounded-2xl overflow-hidden border-4 border-primary/30 shadow-2xl hover-glow-red">
                 <img 
                   src={profilePhoto} 
                   alt="Midhun Krishna - UI/UX Designer" 
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain bg-gradient-to-b from-transparent to-black/10"
                 />
               </div>
             </div>
