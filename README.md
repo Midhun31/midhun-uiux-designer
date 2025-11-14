@@ -97,6 +97,5 @@ Add inside <head>:
 📬 Contact
 
 Midhun – UI/UX Designer
-📧 Email: your-email-here
-📱 Instagram: @your-handle
+📧 Email: midhunkrishna0509@gmail.com
 💼 Portfolio:https://midhunportfolio.netlify.app/
