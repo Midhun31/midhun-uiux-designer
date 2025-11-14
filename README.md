@@ -85,22 +85,7 @@ Build command	npm run build
 Publish directory	dist
 Base directory	(leave empty)
 
-After deployment, your site will be live instantly.
 
-🔄 Updating the Favicon
-
-Replace this file:
-
-public/favicon.ico
-
-
-Then rebuild and redeploy.
-
-📝 SEO & Metadata (Recommended)
-
-Update this file:
-
-public/index.html
 
 
 Add inside <head>:
