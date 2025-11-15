@@ -74,7 +74,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-sm text-gray-400">LinkedIn</p>
-                    <p className="text-white font-semibold">linkedin.com/in/midhun-k</p>
+                    <p className="text-white font-semibold">linkedin.com/in/midhun-k-2671b0256</p>
                   </div>
                 </a>
 
