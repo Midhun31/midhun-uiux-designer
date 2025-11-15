@@ -15,12 +15,6 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Center */}
-          <div className="flex items-center gap-2 text-gray-400 font-inter text-sm">
-            <span>Made with</span>
-            <Heart className="w-4 h-4 text-primary fill-primary animate-pulse" />
-            <span>in Trichy, Tamil Nadu</span>
-          </div>
 
           {/* Right */}
           <div className="text-center md:text-right">
