@@ -7,23 +7,19 @@ import Skills from "@/components/Skills";
 import Certifications from "@/components/Certifications";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
-import ParticleBackground from "@/components/ParticleBackground";
 
 const Index = () => {
   return (
-    <div className="min-h-screen relative">
-      <ParticleBackground />
-      <div className="relative z-10">
-        <Hero />
+    <div className="min-h-screen">
+      <Hero />
       <About />
       <Education />
       <Experience />
       <Projects />
       <Skills />
       <Certifications />
-        <Contact />
-        <Footer />
-      </div>
+      <Contact />
+      <Footer />
     </div>
   );
 };
