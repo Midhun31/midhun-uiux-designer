@@ -8,6 +8,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import city3d from "@/assets/3d-city.png";
 import donut3d from "@/assets/3d-donut.jpg";
 import drone3d from "@/assets/3d-drone.jpg";
+import blenderVideo1 from "@/assets/blender-video-1.mp4";
+import blenderVideo2 from "@/assets/blender-video-2.mp4";
 
 // UI/UX Projects
 import appleFlow from "@/assets/ui-apple-flow.png";
@@ -23,21 +25,38 @@ import cricketPoster from "@/assets/poster-cricket.jpg";
 const projectCategories = {
   "3d": [
     {
+      title: "3D Animation Showreel",
+      description: "Professional 3D animation showcase demonstrating advanced Blender techniques",
+      media: blenderVideo1,
+      type: "video",
+      tags: ["Blender", "Animation", "3D Motion"],
+    },
+    {
+      title: "Dynamic 3D Scene",
+      description: "Cinematic 3D visualization with complex animations and effects",
+      media: blenderVideo2,
+      type: "video",
+      tags: ["Blender", "Cinematics", "VFX"],
+    },
+    {
       title: "Urban Environment Scene",
       description: "Detailed 3D cityscape with realistic lighting and atmospheric effects",
-      image: city3d,
+      media: city3d,
+      type: "image",
       tags: ["Blender", "3D Modeling", "Environment Design"],
     },
     {
       title: "Photorealistic Donuts",
       description: "High-quality 3D product visualization with advanced materials and texturing",
-      image: donut3d,
+      media: donut3d,
+      type: "image",
       tags: ["Blender", "Product Viz", "Materials"],
     },
     {
       title: "Drone Warehouse Visualization",
       description: "Complex scene showcasing industrial automation and warehouse systems",
-      image: drone3d,
+      media: drone3d,
+      type: "image",
       tags: ["Blender", "Industrial Design", "Rendering"],
     },
   ],
@@ -45,25 +64,29 @@ const projectCategories = {
     {
       title: "Apple Product Flow",
       description: "User journey mapping and product ecosystem visualization",
-      image: appleFlow,
+      media: appleFlow,
+      type: "image",
       tags: ["Figma", "User Flow", "Product Design"],
     },
     {
       title: "AirPods Max Landing Page",
       description: "Premium product showcase with minimalist design approach",
-      image: airpods,
+      media: airpods,
+      type: "image",
       tags: ["Figma", "Web Design", "UI Design"],
     },
     {
       title: "Fruit Juice Desktop Concepts",
       description: "Multi-screen desktop application design system",
-      image: fruitJuiceDesktop,
+      media: fruitJuiceDesktop,
+      type: "image",
       tags: ["Figma", "Desktop UI", "Design System"],
     },
     {
       title: "Fruit Juice Website",
       description: "Vibrant brand-focused web design with custom illustrations",
-      image: fruitJuice,
+      media: fruitJuice,
+      type: "image",
       tags: ["Figma", "Web Design", "Branding"],
     },
   ],
@@ -71,26 +94,29 @@ const projectCategories = {
     {
       title: "Workshop Innovation Poster",
       description: "Event poster design for technology and innovation workshop",
-      image: workshopPoster,
+      media: workshopPoster,
+      type: "image",
       tags: ["Affinity", "Poster Design", "Typography"],
     },
     {
       title: "Arumide Perfume Ad",
       description: "Luxury product advertisement with elegant visual composition",
-      image: perfumePoster,
+      media: perfumePoster,
+      type: "image",
       tags: ["Canva", "Product Ad", "Luxury Branding"],
     },
     {
       title: "Cricket Typography Poster",
       description: "Bold typographic design celebrating cricket legends",
-      image: cricketPoster,
+      media: cricketPoster,
+      type: "image",
       tags: ["Adobe", "Typography", "Sports Design"],
     },
   ],
 };
 
 const Projects = () => {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [selectedMedia, setSelectedMedia] = useState<{ src: string; type: string } | null>(null);
 
   return (
     <section id="projects" className="py-24 px-6 bg-gradient-to-b from-background via-secondary/10 to-background relative overflow-hidden">
@@ -127,16 +153,31 @@ const Projects = () => {
                   key={project.title}
                   className="group overflow-hidden border-2 border-border hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 hover:glow-red bg-card/80 backdrop-blur-sm cursor-pointer animate-fade-up"
                   style={{ animationDelay: `${index * 0.1}s` }}
-                  onClick={() => setSelectedImage(project.image)}
+                  onClick={() => setSelectedMedia({ src: project.media, type: project.type })}
                 >
                   <div className="relative overflow-hidden aspect-video">
-                    <img 
-                      src={project.image} 
-                      alt={project.title}
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                    />
+                    {project.type === "video" ? (
+                      <video 
+                        src={project.media} 
+                        className="w-full h-full object-cover"
+                        muted
+                        loop
+                        playsInline
+                        onMouseEnter={(e) => e.currentTarget.play()}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.pause();
+                          e.currentTarget.currentTime = 0;
+                        }}
+                      />
+                    ) : (
+                      <img 
+                        src={project.media} 
+                        alt={project.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
+                    )}
                     <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                      <span className="text-white font-semibold text-lg">Click to View</span>
+                      <span className="text-white font-semibold text-lg">Click to {project.type === "video" ? "Play" : "View"}</span>
                     </div>
                   </div>
                   
@@ -170,11 +211,11 @@ const Projects = () => {
                   key={project.title}
                   className="group overflow-hidden border-2 border-border hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 hover:glow-red bg-card/80 backdrop-blur-sm cursor-pointer animate-fade-up"
                   style={{ animationDelay: `${index * 0.1}s` }}
-                  onClick={() => setSelectedImage(project.image)}
+                  onClick={() => setSelectedMedia({ src: project.media, type: project.type })}
                 >
                   <div className="relative overflow-hidden aspect-video">
                     <img 
-                      src={project.image} 
+                      src={project.media} 
                       alt={project.title}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
@@ -213,11 +254,11 @@ const Projects = () => {
                   key={project.title}
                   className="group overflow-hidden border-2 border-border hover:border-primary/50 transition-all duration-300 hover:-translate-y-2 hover:glow-red bg-card/80 backdrop-blur-sm cursor-pointer animate-fade-up"
                   style={{ animationDelay: `${index * 0.1}s` }}
-                  onClick={() => setSelectedImage(project.image)}
+                  onClick={() => setSelectedMedia({ src: project.media, type: project.type })}
                 >
                   <div className="relative overflow-hidden aspect-[3/4]">
                     <img 
-                      src={project.image} 
+                      src={project.media} 
                       alt={project.title}
                       className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
@@ -251,22 +292,32 @@ const Projects = () => {
         </Tabs>
       </div>
 
-      {/* Image Modal */}
-      <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
+      {/* Media Modal */}
+      <Dialog open={!!selectedMedia} onOpenChange={() => setSelectedMedia(null)}>
         <DialogContent className="max-w-[95vw] max-h-[95vh] p-0 bg-black/95 border-primary/20">
           <button
-            onClick={() => setSelectedImage(null)}
+            onClick={() => setSelectedMedia(null)}
             className="absolute top-4 right-4 z-50 p-2 rounded-full bg-primary/20 hover:bg-primary/30 transition-colors"
           >
             <X className="h-6 w-6 text-white" />
           </button>
-          {selectedImage && (
+          {selectedMedia && (
             <div className="flex items-center justify-center w-full h-full p-4">
-              <img 
-                src={selectedImage} 
-                alt="Project preview"
-                className="max-w-full max-h-[90vh] object-contain animate-scale-in"
-              />
+              {selectedMedia.type === "video" ? (
+                <video
+                  src={selectedMedia.src}
+                  controls
+                  autoPlay
+                  loop
+                  className="max-w-full max-h-[90vh] object-contain animate-scale-in"
+                />
+              ) : (
+                <img 
+                  src={selectedMedia.src} 
+                  alt="Project preview"
+                  className="max-w-full max-h-[90vh] object-contain animate-scale-in"
+                />
+              )}
             </div>
           )}
         </DialogContent>
