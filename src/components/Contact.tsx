@@ -33,7 +33,7 @@ const Contact = () => {
                 <img 
                   src={profilePhoto} 
                   alt="Midhun Krishna - UI/UX Designer" 
-                  className="w-full h-full object-cover object-center scale-125"
+                  className="w-full h-full object-cover object-center scale-150"
                 />
               </div>
             </div>
