@@ -6,7 +6,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 // 3D Projects
 import city3d from "@/assets/3d-city.png";
-import donut3d from "@/assets/3d-donut.jpg";
+import tropicalScene from "@/assets/3d-tropical-scene.jpg";
 import drone3d from "@/assets/3d-drone.jpg";
 import blenderVideo1 from "@/assets/blender-video-1.mp4";
 import blenderVideo2 from "@/assets/blender-video-2.mp4";
@@ -21,6 +21,8 @@ import fruitJuice from "@/assets/ui-fruit-juice.png";
 import workshopPoster from "@/assets/poster-workshop.jpg";
 import perfumePoster from "@/assets/poster-perfume.jpg";
 import cricketPoster from "@/assets/poster-cricket.jpg";
+import travelsPoster from "@/assets/poster-travels.png";
+import waterManagementPoster from "@/assets/poster-water-management.png";
 
 const projectCategories = {
   "3d": [
@@ -46,11 +48,11 @@ const projectCategories = {
       tags: ["Blender", "3D Modeling", "Environment Design"],
     },
     {
-      title: "Photorealistic Donuts",
-      description: "High-quality 3D product visualization with advanced materials and texturing",
-      media: donut3d,
+      title: "Tropical Environment",
+      description: "Photorealistic natural scene with detailed vegetation and atmospheric lighting",
+      media: tropicalScene,
       type: "image",
-      tags: ["Blender", "Product Viz", "Materials"],
+      tags: ["Blender", "Environment", "Nature Scene"],
     },
     {
       title: "Drone Warehouse Visualization",
@@ -111,6 +113,20 @@ const projectCategories = {
       media: cricketPoster,
       type: "image",
       tags: ["Adobe", "Typography", "Sports Design"],
+    },
+    {
+      title: "Sri Vinayaga Travels",
+      description: "Professional travel company poster with modern branding and contact information",
+      media: travelsPoster,
+      type: "image",
+      tags: ["Canva", "Business Poster", "Branding"],
+    },
+    {
+      title: "Waste Water Management System",
+      description: "Educational infographic poster showcasing IoT-based water recycling methodology",
+      media: waterManagementPoster,
+      type: "image",
+      tags: ["Canva", "Infographic", "Educational Design"],
     },
   ],
 };
