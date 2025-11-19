@@ -50,23 +50,23 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-up" style={{ animationDelay: '0.8s' }}>
-            <a href="#contact">
+            <a href="#projects">
               <Button 
                 size="lg" 
                 className="bg-primary hover:bg-primary/90 text-white font-montserrat text-lg px-8 py-6 rounded-full hover-glow-red group"
               >
-                Let's Work Together
+                View My Work ↓
                 <ArrowDown className="ml-2 group-hover:translate-y-1 transition-transform" />
               </Button>
             </a>
-            <a href="mailto:midhunkrishna0509@gmail.com">
+            <a href="#contact">
               <Button 
                 size="lg" 
                 variant="outline"
                 className="border-2 border-primary text-primary hover:bg-primary hover:text-white font-montserrat text-lg px-8 py-6 rounded-full transition-all duration-300"
               >
                 <Mail className="mr-2" />
-                Get in Touch
+                Hire Me
               </Button>
             </a>
           </div>

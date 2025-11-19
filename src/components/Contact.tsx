@@ -98,15 +98,24 @@ const Contact = () => {
 
           {/* Contact Form */}
           <div className="animate-fade-up" style={{ animationDelay: '0.4s' }}>
-            <form className="glass-card p-8 rounded-3xl space-y-6">
+            <form 
+              action="https://formsubmit.co/midhunkrishna0509@gmail.com"
+              method="POST"
+              className="glass-card p-8 rounded-3xl space-y-6"
+            >
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_next" value={window.location.origin + "/success.html"} />
+              
               <div>
                 <label htmlFor="name" className="block text-sm font-semibold text-gray-300 mb-2 font-inter">
                   Your Name
                 </label>
                 <Input 
                   id="name"
+                  name="name"
                   type="text" 
                   placeholder="John Doe"
+                  required
                   className="bg-black/40 border-gray-700 text-white placeholder:text-gray-500 focus:border-primary"
                 />
               </div>
@@ -117,8 +126,10 @@ const Contact = () => {
                 </label>
                 <Input 
                   id="email"
+                  name="email"
                   type="email" 
                   placeholder="john@example.com"
+                  required
                   className="bg-black/40 border-gray-700 text-white placeholder:text-gray-500 focus:border-primary"
                 />
               </div>
@@ -129,8 +140,10 @@ const Contact = () => {
                 </label>
                 <Textarea 
                   id="message"
+                  name="message"
                   rows={6}
                   placeholder="Tell me about your project or opportunity..."
+                  required
                   className="bg-black/40 border-gray-700 text-white placeholder:text-gray-500 focus:border-primary resize-none"
                 />
               </div>
