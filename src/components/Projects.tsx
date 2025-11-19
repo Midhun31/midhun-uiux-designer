@@ -16,6 +16,8 @@ import appleFlow from "@/assets/ui-apple-flow.png";
 import airpods from "@/assets/ui-airpods.png";
 import fruitJuiceDesktop from "@/assets/ui-fruit-juice-desktop.png";
 import fruitJuice from "@/assets/ui-fruit-juice.png";
+import easyBuyFlow from "@/assets/ui-easy-buy-flow.png";
+import easyBuyLogin from "@/assets/ui-easy-buy-login.png";
 
 // Graphic Design
 import workshopPoster from "@/assets/poster-workshop.jpg";
@@ -91,6 +93,20 @@ const projectCategories = {
       media: fruitJuice,
       type: "image",
       tags: ["Figma", "Web Design", "Branding"],
+    },
+    {
+      title: "Easy Buy E-commerce Flow",
+      description: "Complete user flow design showcasing multi-screen e-commerce experience with product browsing and device-specific layouts",
+      media: easyBuyFlow,
+      type: "image",
+      tags: ["Figma", "User Flow", "E-commerce"],
+    },
+    {
+      title: "Easy Buy Mobile Login",
+      description: "Modern mobile authentication interface with gradient aesthetics and clean user experience",
+      media: easyBuyLogin,
+      type: "image",
+      tags: ["Figma", "Mobile UI", "Authentication"],
     },
   ],
   "graphic": [
