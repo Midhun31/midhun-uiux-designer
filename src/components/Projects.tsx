@@ -23,6 +23,7 @@ import perfumePoster from "@/assets/poster-perfume.jpg";
 import cricketPoster from "@/assets/poster-cricket.jpg";
 import travelsPoster from "@/assets/poster-travels.png";
 import waterManagementPoster from "@/assets/poster-water-management.png";
+import pizzaPoster from "@/assets/poster-pizza.jpg";
 
 const projectCategories = {
   "3d": [
@@ -127,6 +128,13 @@ const projectCategories = {
       media: waterManagementPoster,
       type: "image",
       tags: ["Canva", "Infographic", "Educational Design"],
+    },
+    {
+      title: "Delicious Pizza Restaurant",
+      description: "Hand-crafted food branding poster with appetizing visuals and bilingual typography",
+      media: pizzaPoster,
+      type: "image",
+      tags: ["Canva", "Food Design", "Restaurant Branding"],
     },
   ],
 };
