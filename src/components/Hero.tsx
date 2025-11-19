@@ -27,6 +27,13 @@ const Hero = () => {
             </h1>
           </div>
 
+          {/* Designer Introduction */}
+          <div className="animate-fade-up" style={{ animationDelay: '0.3s' }}>
+            <p className="text-2xl md:text-3xl font-montserrat text-white">
+              I'm <span className="text-primary font-semibold">Midhun</span> — Graphic & UI/UX Designer
+            </p>
+          </div>
+
           {/* Subheading */}
           <div className="animate-fade-up" style={{ animationDelay: '0.4s' }}>
             <p className="text-2xl md:text-4xl font-montserrat font-light tracking-wide text-gray-300">
