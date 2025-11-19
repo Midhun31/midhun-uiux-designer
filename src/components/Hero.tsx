@@ -55,7 +55,7 @@ const Hero = () => {
                 size="lg" 
                 className="bg-primary hover:bg-primary/90 text-white font-montserrat text-lg px-8 py-6 rounded-full hover-glow-red group"
               >
-                View My Work ↓
+                View My Work
                 <ArrowDown className="ml-2 group-hover:translate-y-1 transition-transform" />
               </Button>
             </a>
