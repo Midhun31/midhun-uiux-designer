@@ -199,7 +199,11 @@ const Projects = () => {
                     {project.type === "video" ? (
                       <video 
                         src={project.media} 
-                        className="w-full h-full object-cover"
+                        className={`w-full h-full object-cover ${
+                          (project.title === "Dynamic 3D Scene" || project.title === "3D Animation Showreel") 
+                            ? "rotate-90 scale-[1.78]" 
+                            : ""
+                        }`}
                         muted
                         loop
                         playsInline
@@ -349,7 +353,11 @@ const Projects = () => {
                   controls
                   autoPlay
                   loop
-                  className="max-w-full max-h-[90vh] object-contain animate-scale-in"
+                  className={`max-w-full max-h-[90vh] object-contain animate-scale-in ${
+                    (selectedMedia.src === blenderVideo1 || selectedMedia.src === blenderVideo2)
+                      ? "rotate-90 scale-[1.78]"
+                      : ""
+                  }`}
                 />
               ) : (
                 <img 
