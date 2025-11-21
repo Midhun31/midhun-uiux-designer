@@ -201,7 +201,7 @@ const Projects = () => {
                         src={project.media} 
                         className={`w-full h-full object-cover ${
                           (project.title === "Dynamic 3D Scene" || project.title === "3D Animation Showreel") 
-                            ? "rotate-90 scale-[1.78]" 
+                            ? "-rotate-90 scale-[1.78]" 
                             : ""
                         }`}
                         muted
@@ -355,7 +355,7 @@ const Projects = () => {
                   loop
                   className={`max-w-full max-h-[90vh] object-contain animate-scale-in ${
                     (selectedMedia.src === blenderVideo1 || selectedMedia.src === blenderVideo2)
-                      ? "rotate-90 scale-[1.78]"
+                      ? "-rotate-90 scale-[1.78]"
                       : ""
                   }`}
                 />
