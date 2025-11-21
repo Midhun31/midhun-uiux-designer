@@ -18,6 +18,8 @@ import fruitJuiceDesktop from "@/assets/ui-fruit-juice-desktop.png";
 import fruitJuice from "@/assets/ui-fruit-juice.png";
 import easyBuyFlow from "@/assets/ui-easy-buy-flow.png";
 import easyBuyLogin from "@/assets/ui-easy-buy-login.png";
+import portfolioOverview from "@/assets/ui-portfolio-overview.png";
+import portfolioHero from "@/assets/ui-portfolio-hero.png";
 
 // Graphic Design
 import workshopPoster from "@/assets/poster-workshop.jpg";
@@ -66,6 +68,20 @@ const projectCategories = {
     },
   ],
   "uiux": [
+    {
+      title: "Personal Portfolio Website Design",
+      description: "Complete portfolio website design system with bold green and black aesthetic, featuring interactive navigation and modern layout architecture",
+      media: portfolioOverview,
+      type: "image",
+      tags: ["Figma", "Portfolio Design", "Web Design"],
+    },
+    {
+      title: "Portfolio Hero Section",
+      description: "Eye-catching hero section design with striking typography, brand identity integration, and seamless navigation structure",
+      media: portfolioHero,
+      type: "image",
+      tags: ["Figma", "Hero Design", "UI Design"],
+    },
     {
       title: "Apple Product Flow",
       description: "User journey mapping and product ecosystem visualization",
