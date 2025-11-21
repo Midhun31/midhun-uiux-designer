@@ -14,8 +14,10 @@ import blenderVideo2 from "@/assets/blender-video-2.mp4";
 // UI/UX Projects
 import appleFlow from "@/assets/ui-apple-flow.png";
 import airpods from "@/assets/ui-airpods.png";
-import fruitJuiceDesktop from "@/assets/ui-fruit-juice-desktop.png";
-import fruitJuice from "@/assets/ui-fruit-juice.png";
+import fruitJuiceOverview from "@/assets/ui-fruit-juice-overview.png";
+import fruitJuiceAbout from "@/assets/ui-fruit-juice-about.png";
+import fruitJuiceOrange from "@/assets/ui-fruit-juice-orange.png";
+import fruitJuiceStrawberry from "@/assets/ui-fruit-juice-strawberry.png";
 import easyBuyFlow from "@/assets/ui-easy-buy-flow.png";
 import easyBuyLogin from "@/assets/ui-easy-buy-login.png";
 import portfolioOverview from "@/assets/ui-portfolio-overview.png";
@@ -97,18 +99,32 @@ const projectCategories = {
       tags: ["Figma", "Web Design", "UI Design"],
     },
     {
-      title: "Fruit Juice Desktop Concepts",
-      description: "Multi-screen desktop application design system",
-      media: fruitJuiceDesktop,
+      title: "FreshSip Fruit Juice App - Full Flow",
+      description: "Complete multi-page design system for fruit juice e-commerce app with vibrant color schemes, interactive navigation, and product showcase screens",
+      media: fruitJuiceOverview,
       type: "image",
-      tags: ["Figma", "Desktop UI", "Design System"],
+      tags: ["Figma", "App Design", "E-commerce"],
     },
     {
-      title: "Fruit Juice Website",
-      description: "Vibrant brand-focused web design with custom illustrations",
-      media: fruitJuice,
+      title: "FreshSip - About Page",
+      description: "Brand story and mission page with elegant typography and warm color palette showcasing company values and commitment to quality",
+      media: fruitJuiceAbout,
       type: "image",
-      tags: ["Figma", "Web Design", "Branding"],
+      tags: ["Figma", "UI Design", "Branding"],
+    },
+    {
+      title: "FreshSip - Orange Juice Screen",
+      description: "Product detail page featuring energetic orange theme with product visualization, descriptive content, and intuitive navigation",
+      media: fruitJuiceOrange,
+      type: "image",
+      tags: ["Figma", "Product Design", "UI Design"],
+    },
+    {
+      title: "FreshSip - Strawberry Juice Screen",
+      description: "Product showcase with rich red aesthetic, appetizing visuals, and detailed product information with cohesive design language",
+      media: fruitJuiceStrawberry,
+      type: "image",
+      tags: ["Figma", "Product Design", "UI Design"],
     },
     {
       title: "Easy Buy E-commerce Flow",
