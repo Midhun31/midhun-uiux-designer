@@ -30,6 +30,7 @@ import cricketPoster from "@/assets/poster-cricket.jpg";
 import travelsPoster from "@/assets/poster-travels.png";
 import waterManagementPoster from "@/assets/poster-water-management.png";
 import pizzaPoster from "@/assets/poster-pizza.jpg";
+import boatSpeakerPoster from "@/assets/poster-boat-speaker.png";
 
 const projectCategories = {
   "3d": [
@@ -183,6 +184,13 @@ const projectCategories = {
       media: pizzaPoster,
       type: "image",
       tags: ["Canva", "Food Design", "Restaurant Branding"],
+    },
+    {
+      title: "boAt Stone Ignite Speaker",
+      description: "Bold product advertisement poster featuring premium Bluetooth speaker with vibrant neon aesthetics and cityscape backdrop",
+      media: boatSpeakerPoster,
+      type: "image",
+      tags: ["Affinity", "Product Ad", "Tech Branding"],
     },
   ],
 };
